@@ -26,3 +26,28 @@ container.addEventListener('mousedown', (event) => {
     event.preventDefault()
   }
 })
+
+let fontSize = 16 // default font size
+
+function updateFontSize() {
+  const tiptap = document.querySelector('.tiptap')
+  if (tiptap) {
+    tiptap.style.fontSize = `${fontSize}px`
+  }
+}
+
+document.addEventListener('keydown', (event) => {
+  if (event.ctrlKey && !event.shiftKey && !event.altKey) {
+    if (event.key === '+' || event.key === '=') {
+      fontSize = Math.min(fontSize + 2, 48)
+      updateFontSize()
+      event.preventDefault()
+    } else if (event.key === '-') {
+      fontSize = Math.max(fontSize - 2, 8)
+      updateFontSize()
+      event.preventDefault()
+    }
+  }
+})
+
+updateFontSize()

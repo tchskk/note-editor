@@ -13,8 +13,8 @@ MVC Functionality
 - Launching the app loads in the last opened note
 Future Funtions
 ---
-- Zoom in and Out
-  - Ctrl + & - 
+- Zoom in and Out :white_check_mark:
+  - Ctrl + & -
 - Change Fonts
   - Provide 3 options
   - Applies to all content
