@@ -8,24 +8,20 @@ const editor = new Editor({
   extensions: [
     StarterKit,
   ],
-  content: `
-  New Document
-  `,
+  autofocus: 'start',
 })
 
 const container = document.querySelector('#editor')
 container.addEventListener('mousedown', (event) => {
-  // Only handle clicks outside the .tiptap area
   if (event.target === container) {
     const { doc } = editor.state
     const lastNode = doc.lastChild
 
-    // If the last node is not an empty paragraph, add one
     if (!lastNode || lastNode.type.name !== 'paragraph' || lastNode.content.size !== 0) {
-      editor.commands.insertContent('<p></p>')
+      editor.commands.focus('end')
+      editor.commands.enter()
     }
 
-    // Focus at the end (which is now a new empty line)
     editor.commands.focus('end')
     event.preventDefault()
   }

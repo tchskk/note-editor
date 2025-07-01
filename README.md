@@ -10,11 +10,14 @@ MVC Functionality
 ---
 - Save / Load Note in `.md` format
 - Edit note
-
+- Launching the app loads in the last opened note
 Future Funtions
 ---
 - Zoom in and Out
   - Ctrl + & - 
+- Change Fonts
+  - Provide 3 options
+  - Applies to all content
 - Search Function
   - Ctrl + F
 - Autosave
