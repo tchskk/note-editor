@@ -9,7 +9,24 @@ const editor = new Editor({
     StarterKit,
   ],
   content: `
-  <p>Hello World!</p>
-  <p>This is a simple Notion-like editor.</p>
+  New Document
   `,
+})
+
+const container = document.querySelector('#editor')
+container.addEventListener('mousedown', (event) => {
+  // Only handle clicks outside the .tiptap area
+  if (event.target === container) {
+    const { doc } = editor.state
+    const lastNode = doc.lastChild
+
+    // If the last node is not an empty paragraph, add one
+    if (!lastNode || lastNode.type.name !== 'paragraph' || lastNode.content.size !== 0) {
+      editor.commands.insertContent('<p></p>')
+    }
+
+    // Focus at the end (which is now a new empty line)
+    editor.commands.focus('end')
+    event.preventDefault()
+  }
 })

@@ -21,15 +21,41 @@
 
 body {
     font-family: Arial, sans-serif;
-    padding: 5px;
+    color: #ffffff;
+    background-color: #191919;
+    padding: 10px;
+    margin: 0;
+    height: 98vh;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    background-color: #191919;
-    color: #ffffff;
 }
 
+#toolbar {
+    position: sticky;
+    top: 0;
+    /* z-index: 10; */
+    /* padding: 10px; */
+    outline: red solid 1px;
+    margin: 0 10px 10px 10px;
+}
+
+#editor {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    min-height: 0; /* For flexbox scrolling */
+    width: 100%;
+    outline: blue solid 2px;
+    position: relative;
+    cursor: text;    /* Show text cursor when hovering */
+}   
+
 .tiptap {
-    height: 82vh;
-    outline: gray solid 1px;
-    margin: 50px;
+    /* width: min(90%, 1500px); */
+    width: 100%;
+    padding: 0 100px;
+    height: auto;
+    margin: 0 auto;
+    outline: green solid 1px;
+    box-sizing: border-box;
 }
