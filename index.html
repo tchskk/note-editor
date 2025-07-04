@@ -8,7 +8,25 @@
 </head>
 <body>
   <div id="toolbar">
-    <button id="options-btn">...</button>
+    <button id="options-btn" aria-label="Options">&#x22EF;</button>
+    <div id="options-menu" class="hidden">
+      <button id="save-btn">Save File</button>
+      <button id="load-btn">Load File</button>
+      <div class="font-section">
+        <label>Font:</label>
+        <select id="font-family-select">
+          <option value="Arial, sans-serif">Arial</option>
+          <option value="'Fira Mono', monospace">Fira Mono</option>
+          <option value="'Times New Roman', serif">Times New Roman</option>
+        </select>
+      </div>
+      <div class="font-size-section">
+        <label>Font Size:</label>
+        <button id="font-decrease">-</button>
+        <span id="font-size-label">16</span>
+        <button id="font-increase">+</button>
+      </div>
+    </div>
   </div>
   <div id="editor">
   </div>
