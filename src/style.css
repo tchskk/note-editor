@@ -1,24 +1,3 @@
-:root {
-    --white: #FFF;
-    --black: #2E2B29;
-    --black-contrast: #110F0E;
-    --gray-1: rgba(61, 37, 20, .05);
-    --gray-2: rgba(61, 37, 20, .08);
-    --gray-3: rgba(61, 37, 20, .12);
-    --gray-4: rgba(53, 38, 28, .3);
-    --gray-5: rgba(28, 25, 23, .6);
-    --green: #22C55E;
-    --purple: #6A00F5;
-    --purple-contrast: #5800CC;
-    --purple-light: rgba(88, 5, 255, .05);
-    --yellow-contrast: #FACC15;
-    --yellow: rgba(250, 204, 21, .4);
-    --yellow-light: #FFFAE5;
-    --red: #FF5C33;
-    --red-light: #FFEBE5;
-    --shadow: 0px 12px 33px 0px rgba(0, 0, 0, .06), 0px 3.618px 9.949px 0px rgba(0, 0, 0, .04);
-}
-
 body {
     font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
     color: #ffffff;
@@ -34,7 +13,7 @@ body {
 #toolbar {
     position: sticky;
     top: 0;
-    outline: red solid 1px;
+    /* outline: red solid 1px; */
     margin: 0 10px 10px 10px;
     display: flex;
     justify-content: flex-end;
@@ -62,15 +41,13 @@ body {
     flex-direction: column;
     position: absolute;
     top: 100%;
-    right: 10px;
     background: #232323;
     border: 1px solid #444;
     border-radius: 8px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
     padding: 12px 16px;
     min-width: 180px;
     gap: 10px;
-    z-index: 100;
+    z-index: 999;
 }
 
 #options-menu.show {
@@ -92,6 +69,16 @@ body {
 #options-menu button:hover,
 #options-menu select:hover {
     background: #333;
+}
+
+.load-section {
+    display: flex;
+    align-items: center;
+}
+
+#new-btn,
+#load-btn {
+    width: 50%;
 }
 
 .font-section,
@@ -119,6 +106,9 @@ body {
     color: #fff;
     cursor: pointer;
     transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #font-increase:hover, #font-decrease:hover {
@@ -128,11 +118,11 @@ body {
 #editor {
     flex: 1 1 auto;
     overflow-y: auto;
-    min-height: 0; /* For flexbox scrolling */
+    min-height: 0;
     width: 100%;
-    outline: blue solid 2px;
+    /* outline: blue solid 2px; */
     position: relative;
-    cursor: text;    /* Show text cursor when hovering */
+    cursor: text;
 }   
 
 .tiptap {
@@ -141,6 +131,7 @@ body {
     padding: 0 15vw;
     height: auto;
     margin: 0 auto;
-    outline: green solid 1px;
+    outline: none;
+    /* outline: green solid 1px; */
     box-sizing: border-box;
 }
